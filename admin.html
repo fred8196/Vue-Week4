@@ -71,11 +71,13 @@
             <pagination :page="pagination" @emit-page="getProduct"></pagination>
             <!-- pagination元件 -->
         </div>
-        <!-- Modal -->
-        <product-modal :temp-product="tempProduct" :is-new="isNew" @get-product="getProduct" :page="pagination">
-        </product-modal>
-        <del-product-modal :temp-product="tempProduct" :page="pagination" @get-product="getProduct"></del-product-modal>
-        <!-- Modal -->
+        <!-- Modal元件 -->
+        <user-product-modal :temp-product="tempProduct" :is-new="isNew" @get-product="getProduct" :page="pagination"
+            ref="pModal">
+        </user-product-modal>
+        <del-product-modal :temp-product="tempProduct" :page="pagination" @get-product="getProduct" ref="dModal">
+        </del-product-modal>
+        <!-- Modal元件 -->
     </div>
     <!-- pagination template -->
     <script :page="pagination" @emit-page="getProduct" type="text/x-template" id="pagination">
